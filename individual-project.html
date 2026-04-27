@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Individual Project</title>
+</head>
+<body>
 
+<h1>Individual Project: Neural Networks for MNIST Digit Classification</h1>
+
+<p>
+This project focuses on the design and evaluation of neural network models for handwritten digit classification using the MNIST dataset. The objective was to compare a baseline dense neural network with a convolutional neural network (CNN), and to assess how architectural choices influence model performance and generalisation.
+</p>
+
+<h2>Data and Preprocessing</h2>
+
+<p>
+The MNIST dataset consists of 60,000 training and 10,000 test images of handwritten digits, each represented as a 28×28 grayscale image across 10 classes :contentReference[oaicite:0]{index=0}. The training data was further split into training (80%) and validation (20%) sets with stratification to preserve class balance. Pixel values were normalised to the [0,1] range, ensuring stable and efficient model training.
+</p>
+
+<h2>Model Architectures</h2>
+
+<p>
+Two models were implemented. The dense neural network served as a baseline, where each image was flattened into a 784-dimensional vector, thereby ignoring spatial relationships. In contrast, the CNN preserved the two-dimensional structure and applied convolutional and pooling layers to extract local features such as edges and shapes. Both models used ReLU activation, dropout for regularisation, and a softmax output layer for classification.
+</p>
+
+<h2>Training and Evaluation</h2>
+
+<p>
+Both models were trained using the Adam optimiser and sparse categorical cross-entropy loss for 10 epochs with a batch size of 32 :contentReference[oaicite:1]{index=1}. The dense model achieved approximately 97.5% test accuracy, while the CNN reached approximately 99.0%, demonstrating superior performance. As shown in the validation results, the CNN outperformed the baseline by around 1.4 percentage points due to its ability to capture spatial structure in the data :contentReference[oaicite:2]{index=2}.
+</p>
+
+<h2>Critical Reflection</h2>
+
+<p>
+The results confirm that while dense neural networks provide a strong and interpretable baseline, convolutional architectures are more suitable for image classification tasks. The CNN demonstrated better generalisation and faster convergence, although at the cost of increased model complexity and computational requirements. Mild overfitting was observed, but remained controlled through the use of dropout. Potential improvements include early stopping, data augmentation, and exploring deeper architectures.
+</p>
+
+<h2>Project Materials</h2>
+
+<p>
+<a href="https://colab.research.google.com/drive/1z-kHtHrb9raUOzKKsaRvdCmS93yDk2vx?usp=sharing" target="_blank">
+View notebook (Google Colab)
+</a>
+</p>
+
+<p>
+<a href="MLresub4.pdf" target="_blank">
+View presentation
+</a>
+</p>
+
+<br>
+
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>
